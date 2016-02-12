@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesDavis.Core", "TilesDavis\TilesDavis.Core.csproj", "{DC552132-5016-469A-B013-BD5E90D37B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesDavis.Wpf", "TilesDavis.Wpf\TilesDavis.Wpf\TilesDavis.Wpf.csproj", "{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TilesDavis.Install", "TilesDavis.Install\TilesDavis.Install.vdproj", "{2218B1F0-22BB-4FC8-B490-1C4915168166}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy files", "Deploy files", "{7061503F-A30F-4B73-AAA0-14974A9B1035}"
+	ProjectSection(SolutionItems) = preProject
+		..\Deploy files\.tilesdavis_logo_150x150.png = ..\Deploy files\.tilesdavis_logo_150x150.png
+		..\Deploy files\PinToStart.vbs = ..\Deploy files\PinToStart.vbs
+		..\Deploy files\TilesDavis.visualelementsmanifest.xml = ..\Deploy files\TilesDavis.visualelementsmanifest.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC552132-5016-469A-B013-BD5E90D37B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC552132-5016-469A-B013-BD5E90D37B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC552132-5016-469A-B013-BD5E90D37B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC552132-5016-469A-B013-BD5E90D37B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2218B1F0-22BB-4FC8-B490-1C4915168166}.Debug|Any CPU.ActiveCfg = Debug
+		{2218B1F0-22BB-4FC8-B490-1C4915168166}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
