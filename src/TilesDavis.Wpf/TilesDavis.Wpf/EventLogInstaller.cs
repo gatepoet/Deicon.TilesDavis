@@ -6,7 +6,7 @@ using System.Configuration.Install;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TilesDavis.AddShortcut
+namespace TilesDavis.Wpf
 {
     [RunInstaller(true)]
     public partial class EventLogInstaller : System.Diagnostics.EventLogInstaller

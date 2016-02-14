@@ -1,6 +1,6 @@
-﻿namespace TilesDavis.AddShortcut
+﻿namespace TilesDavis.Wpf
 {
-    partial class ShortcutInstaller
+    partial class EventLogInstaller
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+
         }
 
         #endregion

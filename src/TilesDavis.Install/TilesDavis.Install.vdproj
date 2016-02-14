@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_18439C71219BEDDA80732D6CF578FD44"
+        "OwnerKey" = "8:_CB3330F777914445AA761683AE92A672"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_18439C71219BEDDA80732D6CF578FD44"
+        "OwnerKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_28F76A6245044FEEA507A0A676DDE9A6"
         "OwnerKey" = "8:_CB3330F777914445AA761683AE92A672"
         "MsmSig" = "8:_UNDEFINED"
@@ -69,26 +81,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4993418880F9066E8671E33D92344499"
-        "OwnerKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4993418880F9066E8671E33D92344499"
-        "OwnerKey" = "8:_CB3330F777914445AA761683AE92A672"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_509AE58939FE925967D8C6D1B34598F7"
-        "OwnerKey" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_509AE58939FE925967D8C6D1B34598F7"
         "OwnerKey" = "8:_CB3330F777914445AA761683AE92A672"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -107,18 +107,6 @@
         {
         "MsmKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
         "OwnerKey" = "8:_CB3330F777914445AA761683AE92A672"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
-        "OwnerKey" = "8:_A1CFDAD62330EB8D2ACC8BE30D1D946B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -232,13 +220,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A1CFDAD62330EB8D2ACC8BE30D1D946B"
+        "OwnerKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_96D4961ECAE8CB72E0D75C4F6B57F108"
+        "OwnerKey" = "8:_A1CFDAD62330EB8D2ACC8BE30D1D946B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -310,13 +298,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4993418880F9066E8671E33D92344499"
+        "OwnerKey" = "8:_18439C71219BEDDA80732D6CF578FD44"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -397,61 +379,61 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_0126DBFE6BAC4F88B508AA876122802E"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_084DF0B7FA0F4D43806B0FACE48559AD"
             {
-            "Name" = "8:Remove Shortcut"
+            "Name" = "8:Primary output from TilesDavis.Wpf (Active)"
             "Condition" = "8:"
-            "Object" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-            "FileType" = "3:1"
+            "Object" = "8:_CB3330F777914445AA761683AE92A672"
+            "FileType" = "3:2"
             "InstallAction" = "3:4"
             "Arguments" = "8:"
-            "EntryPoint" = "8:ShortcutInstaller"
+            "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_A395D797_15AA_4151_A809_CF1E810280DF"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:/allusers=[ALLUSERS]"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_5D728360CEFE4FDEB4039C0EEFE14C9D"
-            {
-            "Name" = "8:Add EventLog"
-            "Condition" = "8:"
-            "Object" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-            "FileType" = "3:1"
-            "InstallAction" = "3:1"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:EventLogInstaller"
-            "Sequence" = "3:2"
-            "Identifier" = "8:_40BC6157_25F7_4258_B891_5611357087C1"
+            "Identifier" = "8:_DFAFFE50_89F5_421B_9CCE_6BAC5A0BAC6D"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_A296E8C5F7D64E9C96B070FB9DA8BFE3"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_2BBAD99E03594A739096F4FE2C9A1D5D"
             {
-            "Name" = "8:Remove EventLog"
+            "Name" = "8:Primary output from TilesDavis.Wpf (Active)"
             "Condition" = "8:"
-            "Object" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-            "FileType" = "3:1"
-            "InstallAction" = "3:4"
+            "Object" = "8:_CB3330F777914445AA761683AE92A672"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
             "Arguments" = "8:"
-            "EntryPoint" = "8:EventLogInstaller"
-            "Sequence" = "3:2"
-            "Identifier" = "8:_E27738BD_7066_4DEC_B7CA_2B090BCA82C5"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_359DE478_F326_43CF_A3B7_E2D35078DB45"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_BBC293EEF27F4B81945787234C96FDD5"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_68156345A92D4437B698FFDCFE6BDBE2"
             {
-            "Name" = "8:Add Shortcut"
+            "Name" = "8:Primary output from TilesDavis.Wpf (Active)"
             "Condition" = "8:"
-            "Object" = "8:_98F62B9545994B7E9E3F2185FC9391A5"
-            "FileType" = "3:1"
+            "Object" = "8:_CB3330F777914445AA761683AE92A672"
+            "FileType" = "3:2"
+            "InstallAction" = "3:3"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_E8C0EB5B_E5D9_49C8_ABF7_A104C24FE94A"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_BB1B615756C24D64852C0998FC3B4CE2"
+            {
+            "Name" = "8:Primary output from TilesDavis.Wpf (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_CB3330F777914445AA761683AE92A672"
+            "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
-            "EntryPoint" = "8:ShortcutInstaller"
+            "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_7CBC8F5E_7CB2_4451_B237_E224401F6306"
+            "Identifier" = "8:_8B848235_E5AC_47C2_B63D_F98DF51E7320"
             "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:/allusers=[ALLUSERS]"
+            "CustomActionData" = "8:"
             }
         }
         "DefaultFeature"
@@ -476,6 +458,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_18439C71219BEDDA80732D6CF578FD44"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_18439C71219BEDDA80732D6CF578FD44"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E0A671A52285492890C6C2AC46D16A8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_28F76A6245044FEEA507A0A676DDE9A6"
             {
             "AssemblyRegister" = "3:1"
@@ -569,37 +582,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4993418880F9066E8671E33D92344499"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4993418880F9066E8671E33D92344499"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E0A671A52285492890C6C2AC46D16A8C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_509AE58939FE925967D8C6D1B34598F7"
             {
             "AssemblyRegister" = "3:1"
@@ -629,6 +611,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5FF2DD3366684799A90D51B3E2D0EF52"
+            {
+            "SourcePath" = "8:..\\..\\lib\\tilesdavis-installbanner.png"
+            "TargetName" = "8:tilesdavis-installbanner.png"
+            "Tag" = "8:"
+            "Folder" = "8:_E0A671A52285492890C6C2AC46D16A8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_859B3201356AD718EBD5B2AB9BE9332C"
@@ -998,7 +1000,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TilesDavis"
         "ProductCode" = "8:{F089F2C6-19BC-4246-848F-0EE67375C37F}"
-        "PackageCode" = "8:{0ADFD9B4-3FE0-4115-A38F-4C370D152FFB}"
+        "PackageCode" = "8:{ECE08EF6-512B-454F-9E02-29A895E41C3E}"
         "UpgradeCode" = "8:{BAFC9E9C-E0E2-4DDD-88DA-FA6A4AF5A483}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1118,6 +1120,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E4E7C74169DB497BA511944B09D5DEE8"
+            {
+            "Name" = "8:TilesDavis"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:32512"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_CB3330F777914445AA761683AE92A672"
+            "Folder" = "8:_2A714EEFE2344112BAE4642A27C990DA"
+            "WorkingFolder" = "8:_E0A671A52285492890C6C2AC46D16A8C"
+            "Icon" = "8:_CB3330F777914445AA761683AE92A672"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -1145,7 +1161,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -1195,7 +1212,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -1239,7 +1257,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1253,7 +1272,7 @@
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_581B6EE4ED624F38B642DACCD134737E"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_918F500A5B05419CAFDFD202842BC461"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:Installation Folder"
@@ -1270,7 +1289,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1292,7 +1312,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -1340,7 +1361,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1371,7 +1393,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -1393,7 +1416,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -1428,7 +1452,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -1491,7 +1516,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_5FF2DD3366684799A90D51B3E2D0EF52"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -1540,35 +1566,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:ContentFiles"
             "OutputProjectGuid" = "8:{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                "ExcludeFilter" = "8:ignore.txt"
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_98F62B9545994B7E9E3F2185FC9391A5"
-            {
-            "SourcePath" = "8:..\\TilesDavis.AddShortcut\\obj\\Release\\TilesDavis.AddShortcut.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E0A671A52285492890C6C2AC46D16A8C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{29B5B18F-7834-43C3-B1D9-5E95270E386B}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

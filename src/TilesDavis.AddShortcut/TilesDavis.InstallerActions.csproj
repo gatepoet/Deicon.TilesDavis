@@ -50,18 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShortcutInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ShortcutInstaller.Designer.cs">
-      <DependentUpon>ShortcutInstaller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EventLogInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EventLogInstaller.Designer.cs">
-      <DependentUpon>EventLogInstaller.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,11 +71,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="EventLogInstaller.resx">
-      <DependentUpon>EventLogInstaller.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

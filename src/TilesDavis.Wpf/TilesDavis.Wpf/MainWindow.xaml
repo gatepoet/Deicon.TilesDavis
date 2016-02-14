@@ -11,7 +11,7 @@
         Background="{StaticResource WindowBackgroundBrush}"
         FontSize="{StaticResource NormalFontSize}"
                       
-        Title="TilesDavis v0.000001" Height="Auto" Width="Auto" Icon="Resources/MilesDavis_transparent.png">
+        Title="TilesDavis" Height="Auto" Width="Auto" Icon="Resources/MilesDavis_transparent.png">
     <controls:MetroWindow.Flyouts>
         <controls:FlyoutsControl>
             <controls:Flyout Header="Shortcut"
