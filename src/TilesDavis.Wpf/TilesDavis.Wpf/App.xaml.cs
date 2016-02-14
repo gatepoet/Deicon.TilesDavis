@@ -24,10 +24,15 @@ namespace TilesDavis.Wpf
 
         //    return wp.IsInRole(WindowsBuiltInRole.Administrator);
         //}
-
+        
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+        }
 
+        private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            EventLog.WriteEntry("TilesDavis", e.ToString(), EventLogEntryType.Error);
         }
         //    if (!IsRunAsAdministrator())
         //    {

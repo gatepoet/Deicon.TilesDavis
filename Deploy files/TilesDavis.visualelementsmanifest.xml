@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <VisualElements
-    BackgroundColor="#000000"
-    ShowNameOnSquare150x150Logo="on"
-    ForegroundText="light"
-    Square150x150Logo=".tilesdavis_logo_150x150.png"
-    Square70x70Logo=".tilesdavis_logo_150x150.png" />
-</Application>

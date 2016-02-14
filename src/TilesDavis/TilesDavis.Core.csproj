@@ -34,6 +34,10 @@
       <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -63,7 +67,6 @@
   <ItemGroup>
     <Compile Include="ForegroundText.cs" />
     <Compile Include="IconBackgroundColor.cs" />
-    <Compile Include="Icons.cs" />
     <Compile Include="Icon\IconDir.cs" />
     <Compile Include="Icon\IconExtractor.cs" />
     <Compile Include="Icon\IconHelper.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="Icon\ResourceName.cs" />
     <Compile Include="Icon\Utility.cs" />
     <Compile Include="Icon\Win32.cs" />
+    <Compile Include="IgnoreEntry.cs" />
     <Compile Include="Manifest.cs" />
     <Compile Include="IconLocation.cs" />
     <Compile Include="Shortcut.cs" />

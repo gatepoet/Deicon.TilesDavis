@@ -46,6 +46,14 @@ namespace TilesDavis.Wpf.ViewModels
         private void RemoveAllModifications()
         {
             shortcut.Manifest = null;
+            shortcut.Save();
+            manifest = shortcut.CreateManifest();
+            Tile = null;
+            this.RaisePropertyChanged(nameof(BackgroundColor));
+            this.RaisePropertyChanged(nameof(UseWindowsAccent));
+            this.RaisePropertyChanged(nameof(ShowNameOnSquare150x150Logo));
+
+            MessageBus.Current.SendMessage(new UpdateShortcutsWithSameTargetCommand(this));
         }
 
         public ICommand SelectTileCommand { get; set; }
@@ -63,9 +71,11 @@ namespace TilesDavis.Wpf.ViewModels
             var dialog = CreateOpenFileDialog();
             if (dialog.ShowDialog() == true)
             {
-                if (dialog.FileName != manifest.VisualElements.Square150x150Logo)
+                if (dialog.FileName != manifest.TilePath)
                 {
-                    manifest.VisualElements.Square150x150Logo = dialog.FileName;
+                    manifest.TilePath = dialog.FileName;
+                    if (manifest.VisualElements.BackgroundColor == IconBackgroundColor.Transparent)
+                        manifest.VisualElements.BackgroundColor = accentColor.Value.ToHexString();
                     Tile = GetImage();
                 }
             }
@@ -73,9 +83,9 @@ namespace TilesDavis.Wpf.ViewModels
 
         private BitmapSource GetImage()
         {
-            if (manifest.HasSquare150x150Logo)
+            if (manifest.HasTile)
             {
-                return LoadImage(manifest.VisualElements.Square150x150Logo);
+                return LoadImage(manifest.TilePath);
             }
             else
                 return Icon;
@@ -96,7 +106,7 @@ namespace TilesDavis.Wpf.ViewModels
 
         private void RemoveTile()
         {
-            manifest.VisualElements.Square150x150Logo = null;
+            manifest.TilePath = null;
             Tile = null;
         }
 
@@ -104,6 +114,7 @@ namespace TilesDavis.Wpf.ViewModels
         {
             shortcut.Manifest = manifest;
             shortcut.Save();
+            MessageBus.Current.SendMessage(new UpdateShortcutsWithSameTargetCommand(this));
         }
 
         private static FileDialog CreateOpenFileDialog()
@@ -127,6 +138,15 @@ namespace TilesDavis.Wpf.ViewModels
                 this.RaisePropertyChanged(nameof(BackgroundColor));
                 this.RaisePropertyChanged(nameof(ColorPickerVisible));
             }
+        }
+
+        internal void Reload()
+        {
+            shortcut.Reload();
+            manifest = shortcut.Manifest ?? shortcut.CreateManifest();
+            Tile = null;
+            this.RaisePropertyChanged(nameof(BackgroundColor));
+
         }
 
         public string ShortcutPath
@@ -209,12 +229,6 @@ namespace TilesDavis.Wpf.ViewModels
             }
         }
 
-        private void TileUpdated()
-        {
-            this.RaisePropertyChanged(nameof(Tile));
-            this.RaisePropertyChanged(nameof(HasTile));
-        }
-
         private BitmapImage LoadImage(string uri)
         {
             if (uri == null)
@@ -227,7 +241,7 @@ namespace TilesDavis.Wpf.ViewModels
             return image;
         }
 
-        public bool HasTile => manifest.HasSquare150x150Logo;
+        public bool HasTile => manifest.HasTile;
         public string Target => $"{shortcut.TargetPath} {shortcut.Arguments}";
     }
 }

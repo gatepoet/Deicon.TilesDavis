@@ -154,6 +154,7 @@
     <Compile Include="Util\IMultiSelectCollectionView.cs" />
     <Compile Include="Util\MultiSelect.cs" />
     <Compile Include="Util\MultiSelectCollectionView.cs" />
+    <Compile Include="ViewModels\UpdateShortcutsWithSameTargetCommand.cs" />
     <Compile Include="Views\DetailsView.xaml.cs">
       <DependentUpon>DetailsView.xaml</DependentUpon>
     </Compile>
@@ -209,6 +210,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TilesDavis.AddShortcut\TilesDavis.InstallerActions.csproj">
+      <Project>{29b5b18f-7834-43c3-b1d9-5e95270e386b}</Project>
+      <Name>TilesDavis.InstallerActions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\TilesDavis\TilesDavis.Core.csproj">
       <Project>{dc552132-5016-469a-b013-bd5e90d37b73}</Project>
       <Name>TilesDavis.Core</Name>
@@ -238,6 +243,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\tilesdavis.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paypaldonate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".tilesdavis_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ignore.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

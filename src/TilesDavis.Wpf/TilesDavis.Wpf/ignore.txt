@@ -1,0 +1,4 @@
+{"name":"Uninstall"}
+{"path":"*\\Uninstall.lnk"}
+{"path":"C:\\Windows\\Installer\\*"}
+{"path":"*Microsoft\\Installer\\*"}

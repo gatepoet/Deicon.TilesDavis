@@ -53,7 +53,6 @@ namespace TilesDavis.Wpf.ViewModels
         {
             dependencyResolver.RegisterConstant(this, typeof(IScreen));
 
-            //dependencyResolver.Register(() => new WelcomeView(), typeof(IViewFor<DetailsViewModel>));
             dependencyResolver.Register(() => new DetailsView(), typeof(IViewFor<DetailsViewModel>));
         }
     }

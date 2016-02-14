@@ -9,12 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesDavis.Wpf", "TilesDavi
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TilesDavis.Install", "TilesDavis.Install\TilesDavis.Install.vdproj", "{2218B1F0-22BB-4FC8-B490-1C4915168166}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy files", "Deploy files", "{7061503F-A30F-4B73-AAA0-14974A9B1035}"
-	ProjectSection(SolutionItems) = preProject
-		..\Deploy files\.tilesdavis_logo_150x150.png = ..\Deploy files\.tilesdavis_logo_150x150.png
-		..\Deploy files\PinToStart.vbs = ..\Deploy files\PinToStart.vbs
-		..\Deploy files\TilesDavis.visualelementsmanifest.xml = ..\Deploy files\TilesDavis.visualelementsmanifest.xml
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilesDavis.InstallerActions", "TilesDavis.AddShortcut\TilesDavis.InstallerActions.csproj", "{29B5B18F-7834-43C3-B1D9-5E95270E386B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +27,10 @@ Global
 		{B4D1339F-0DF2-45B5-8B9A-8936BE9DBB3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2218B1F0-22BB-4FC8-B490-1C4915168166}.Debug|Any CPU.ActiveCfg = Debug
 		{2218B1F0-22BB-4FC8-B490-1C4915168166}.Release|Any CPU.ActiveCfg = Release
+		{29B5B18F-7834-43C3-B1D9-5E95270E386B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B5B18F-7834-43C3-B1D9-5E95270E386B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B5B18F-7834-43C3-B1D9-5E95270E386B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B5B18F-7834-43C3-B1D9-5E95270E386B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

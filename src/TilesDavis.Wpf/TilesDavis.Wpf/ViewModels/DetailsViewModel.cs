@@ -1,38 +1,58 @@
 ﻿using ReactiveUI;
 using System;
 using System.Collections;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Threading;
 using TilesDavis.Core;
 using TilesDavis.Wpf.Util;
 using System.Reactive.Linq;
-using System.Reactive.Concurrency;
+using System.Diagnostics;
 
 namespace TilesDavis.Wpf.ViewModels
 {
     public class DetailsViewModel : ViewModel, IRoutableViewModel
     {
+        private readonly Core.TilesDavis tilesDavis = new Core.TilesDavis();
         public string UrlPathSegment
         {
-            get { return "details"; }
+            get
+            {
+                return "details";
+            }
         }
 
-        public IScreen HostScreen { get; protected set; }
+        public IScreen HostScreen
+        {
+            get;
+            protected set;
+        }
+
         public DetailsViewModel(IScreen screen)
         {
             HostScreen = screen;
-            ignoreList = new ObservableCollection<ShortcutViewModel>();
             shortcuts = new ReactiveList<ShortcutViewModel>();
             ShortcutsView = CreateCollectionView(shortcuts);
+            OpenShortcutLocationCommand = new ActionCommand<IList>(OpenShortcutLocation, l => true);
             AddToIgnoreCommand = new ActionCommand<IList>(AddToIgnoreList, l => true);
             ShowFlyoutCommand = new ActionCommand<IList>(ShowFlyout, l => true);
             LoadShortcuts();
+            MessageBus.Current.Listen<UpdateShortcutsWithSameTargetCommand>()
+                .Subscribe(UpdateShortcutsWithSameTarget);
+        }
+
+        private void UpdateShortcutsWithSameTarget(UpdateShortcutsWithSameTargetCommand command)
+        {
+            shortcuts.Where(s => s.Target == command.Shortcut.Target && s != command.Shortcut)
+                .ToList()
+                .ForEach(s => s.Reload());
+        }
+
+        private void OpenShortcutLocation(IList items)
+        {
+            var shortcut = items.Cast<ShortcutViewModel>().FirstOrDefault();
+            Process.Start(Path.GetDirectoryName(shortcut.ShortcutPath));
         }
 
         private void ShowFlyout(IList itemsToShow)
@@ -46,18 +66,12 @@ namespace TilesDavis.Wpf.ViewModels
             var view = new MultiSelectCollectionView<ShortcutViewModel>(shortcuts);
             view.Filter = ApplyFilter;
             view.SortDescriptions.Add(new SortDescription(nameof(ShortcutViewModel.Name), ListSortDirection.Ascending));
-
             return view;
         }
 
-        private const string IgnoreFile = "ignore.txt";
         private void LoadShortcuts()
         {
-            string[] shortcutsToIgnore = File.Exists(IgnoreFile)
-                ? File.ReadAllLines(IgnoreFile)
-                : new string[0];
-
-            Core.TilesDavis.GetAllShortcuts(shortcutsToIgnore)
+            tilesDavis.LoadShortcuts()
                 .ToObservable()
                 .ObserveOn(App.Current.Dispatcher)
                 .Select(CreateViewModel)
@@ -68,14 +82,27 @@ namespace TilesDavis.Wpf.ViewModels
         {
             var items = itemsToHide.Cast<ShortcutViewModel>().ToList();
             shortcuts.RemoveAll(items);
-
-            File.AppendAllLines("ignore.txt", items.Select(s => s.ShortcutPath).ToArray());
+            var entries = items.Select(shortcut => new IgnoreEntry(path: shortcut.ShortcutPath)).ToArray();
+            tilesDavis.AddToIgnoreList(entries);
         }
 
-        public ICommand AddToIgnoreCommand { get; private set; }
-        public ICommand ShowFlyoutCommand { get; private set; }
+        public ICommand OpenShortcutLocationCommand
+        {
+            get;
+            private set;
+        }
 
+        public ICommand AddToIgnoreCommand
+        {
+            get;
+            private set;
+        }
 
+        public ICommand ShowFlyoutCommand
+        {
+            get;
+            private set;
+        }
 
         private bool ApplyFilter(object item)
         {
@@ -106,7 +133,7 @@ namespace TilesDavis.Wpf.ViewModels
         private ShortcutViewModel CreateViewModel(Shortcut shortcut)
         {
             var vm = new ShortcutViewModel(shortcut);
-            vm.PropertyChanged += (s, e) =>
+            vm.PropertyChanged += (sender, e) =>
             {
                 if (e.PropertyName == nameof(ShortcutViewModel.HasTile))
                     ShortcutsView.Refresh();

@@ -8,14 +8,18 @@ namespace TilesDavis.Core
 {
     public class Shortcut
     {
-        protected readonly IWshShortcut link;
+        protected IWshShortcut link;
         public Manifest Manifest { get; set; }
         public string ShortcutPath { get; protected set; }
         private Shortcut(IWshShortcut link, string shortcutPath)
         {
-
-            this.link = link;
             ShortcutPath = shortcutPath;
+            Initialize(link);
+        }
+
+        private void Initialize(IWshShortcut link)
+        {
+            this.link = link;
             if (link.IconLocation.StartsWith(",")) link.IconLocation = link.TargetPath + link.IconLocation;
             Manifest = GetManifest();
         }
@@ -23,6 +27,11 @@ namespace TilesDavis.Core
         public Manifest CreateManifest()
         {
             return new Manifest(TargetPath);
+        }
+        public void Reload()
+        {
+            var link = new WshShell().CreateShortcut(ShortcutPath) as IWshShortcut;
+            Initialize(link);
         }
         public static Shortcut Load(string shortcutPath)
         {
@@ -34,16 +43,35 @@ namespace TilesDavis.Core
 
         public string FullName => link.FullName;
 
-        public string TargetPath => link.TargetPath;
+        public string TargetPath {
+            get { return link.TargetPath; }
+            set { link.TargetPath = value; }
+        }
 
-        public string WorkingDirectory => link.WorkingDirectory;
+        public string WorkingDirectory
+        {
+            get { return link.WorkingDirectory; }
+            set { link.WorkingDirectory = value; }
+        }
 
-        public string Arguments => link.Arguments;
+        public string Arguments
+        {
+            get { return link.Arguments; }
+            set { link.Arguments = value; }
+        }
 
-        public string Description => link.Description;
+        public string Description
+        {
+            get { return link.Description; }
+            set { link.Description = value; }
+        }
 
-        public string Hotkey => link.Hotkey;
-        
+        public string Hotkey
+        {
+            get { return link.Hotkey; }
+            set { link.Hotkey = value; }
+        }
+
         public Icon LoadIcon()
         {
             var iconPath = IconLocation.Filename;
@@ -61,9 +89,17 @@ namespace TilesDavis.Core
             }
         }
 
-        public IconLocation IconLocation => IconLocation.ParseComString(link.IconLocation);
+        public IconLocation IconLocation
+        {
+            get { return IconLocation.ParseComString(link.IconLocation); }
+            set { link.IconLocation = value.ToComString(); }
+        }
 
-        public WindowStyle WindowStyle => (WindowStyle) link.WindowStyle;
+        public WindowStyle WindowStyle
+        {
+            get { return (WindowStyle) link.WindowStyle; }
+            set { link.WindowStyle = (int) value; }
+        }
 
         public bool HasManifest => Manifest != null;
 
@@ -79,6 +115,11 @@ namespace TilesDavis.Core
             if (HasManifest) Manifest.Save();
             else if (GetManifest() != null) Manifest.Delete(TargetPath);
             link.Save();
+        }
+
+        public void ReloadManifest()
+        {
+            Manifest = GetManifest();
         }
     }
 }

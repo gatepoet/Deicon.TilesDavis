@@ -17,6 +17,9 @@ namespace TilesDavis.Core
         [XmlIgnore]
         public string ManifestPath { get; protected set; }
 
+        [XmlIgnore]
+        public string TilePath { get; set; }
+
         public VisualElements VisualElements { get; set; }
 
         /// <summary>
@@ -53,7 +56,7 @@ namespace TilesDavis.Core
                     var ser = new XmlSerializer(typeof(Manifest));
                     var manifest = (Manifest)ser.Deserialize(reader);
                     manifest.ManifestPath = manifestPath;
-                    manifest.VisualElements.Square150x150Logo = manifest.GetFullPath(manifest.VisualElements.Square150x150Logo);
+                    manifest.TilePath = manifest.GetFullPath(manifest.VisualElements.Square150x150Logo);
                     return manifest;
                 }
             }
@@ -79,13 +82,14 @@ namespace TilesDavis.Core
             return path;
         }
 
-        public bool HasSquare150x150Logo => !string.IsNullOrWhiteSpace(VisualElements.Square150x150Logo) && File.Exists(VisualElements.Square150x150Logo);
+        public bool HasTile => !string.IsNullOrWhiteSpace(TilePath) && File.Exists(TilePath);
         public virtual void Save()
         {
             var tilesDir = Path.GetDirectoryName(ManifestPath);
-            if (HasSquare150x150Logo)
+            if (HasTile)
             {
-                CopyIfNew(VisualElements.Square150x150Logo, Path.Combine(tilesDir, Square150x150LogoFilename));
+                var targetPath = Path.Combine(tilesDir, Square150x150LogoFilename);
+                Copy(TilePath, targetPath);
                 VisualElements.Square150x150Logo = VisualElements.Square70x70Logo = Square150x150LogoFilename;
             }
             else
@@ -99,10 +103,11 @@ namespace TilesDavis.Core
             }
         }
 
-        private static void CopyIfNew(string logoPath, string targetPath)
+        private void Copy(string tilePath, string targetPath)
         {
-            if (logoPath != targetPath)
-                File.Copy(logoPath, targetPath, true);
+            if (tilePath == targetPath) return;
+
+            File.Copy(tilePath, targetPath, true);
         }
     }
 }
