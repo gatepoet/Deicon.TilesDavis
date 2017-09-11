@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F5BBF8B05C1F8C3F2E251907438D31A995BD4015</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>96D4B136FB062DB9AA7F770E289DA485F6CC9358</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>TilesDavis.Wpf_TemporaryKey.pfx</ManifestKeyFile>
