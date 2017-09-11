@@ -8,7 +8,10 @@ using System.Windows.Input;
 using TilesDavis.Core;
 using TilesDavis.Wpf.Util;
 using System.Reactive.Linq;
+using System.Reactive;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace TilesDavis.Wpf.ViewModels
 {
@@ -71,11 +74,14 @@ namespace TilesDavis.Wpf.ViewModels
 
         private void LoadShortcuts()
         {
-            tilesDavis.LoadShortcuts()
-                .ToObservable()
-                .ObserveOn(App.Current.Dispatcher)
-                .Select(CreateViewModel)
-                .Subscribe(shortcuts.Add);
+            Task.Factory.StartNew(() =>
+            {
+                tilesDavis.LoadShortcuts()
+                    .ToObservable()
+                    .ObserveOn(App.Current.Dispatcher)
+                    .Select(CreateViewModel)
+                    .Subscribe(shortcuts.Add);
+            });
         }
 
         private void AddToIgnoreList(IList itemsToHide)
